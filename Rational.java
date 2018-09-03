@@ -72,8 +72,7 @@ public class Rational
      * @return a new rational number that is 1/r.
      */    
     public Rational invert()
-    {               
-        // CHANGE THE RETURN TO SOMETHING APPROPRIATE
+    {
         return new Rational(denominator, numerator);
     }
 
@@ -88,9 +87,10 @@ public class Rational
      * @return a new rational number that is the sum of this and the other rational
      */    
     public Rational add(Rational other)
-    {       
-        // ADD NEW CODE AND CHANGE THE RETURN TO SOMETHING APPROPRIATE
-        return null;
+    {
+        int resultDenominator = denominator * other.denominator;
+        int resultNumerator = numerator * other.denominator + other.numerator * denominator;
+        return new Rational(resultNumerator, resultDenominator);
     }
     
      /**
@@ -100,9 +100,8 @@ public class Rational
      * @return a new rational number that is r-t
      */    
     public Rational subtract(Rational other)
-    {               
-        // CHANGE THE RETURN TO SOMETHING APPROPRIATE
-        return null;
+    {
+        return add(other.negate());
     }
 
     /**
