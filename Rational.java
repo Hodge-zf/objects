@@ -61,9 +61,8 @@ public class Rational
      * @return a new rational number that is negation of this number -r
      */    
     public Rational negate()
-    {               
-        // CHANGE THE RETURN TO SOMETHING APPROPRIATE
-        return null;
+    {
+        return new Rational(-1*numerator, denominator);
     }
 
 
@@ -75,7 +74,7 @@ public class Rational
     public Rational invert()
     {               
         // CHANGE THE RETURN TO SOMETHING APPROPRIATE
-        return null;
+        return new Rational(denominator, numerator);
     }
 
 
