@@ -8,7 +8,10 @@
  */
 public class Counter
 {
-    // PUT PRIVATE DATA FIELDS HERE
+    private int myMin;
+    private int myMax;
+    private int myValue;
+    private boolean hasRolledOver;
 
     /**
      * The default constructor for objects of class Counter.  Minimum is 0 and the maximum
@@ -16,7 +19,10 @@ public class Counter
      */
     public Counter()
     {
-        // ADD CODE FOR THE CONSTRUCTOR
+        myMin = 0;
+        myMax = Integer.MAX_VALUE;
+        myValue = myMin;
+        hasRolledOver = false;
     }
     
     
@@ -28,7 +34,12 @@ public class Counter
      * */
     public Counter(int min, int max)
     {
-        // ADD CODE FOR THE ALTERNATE CONSTRUCTOR
+        if(min >= max)
+            throw new CounterInitializationException("minimum value not less than maximum value");
+        myMin = min;
+        myMax = max;
+        myValue = myMin;
+        hasRolledOver = false;
     }
     
     /**
