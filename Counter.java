@@ -53,7 +53,11 @@ public class Counter
         boolean result = true;
         if (otherObject instanceof Counter)
         {
-            // YOUR CODE GOES HERE
+            Counter otherCounter = (Counter) otherObject;
+            result = (myMin == otherCounter.myMin)
+                    && (myMax == otherCounter.myMax)
+                    && (myValue == otherCounter.myValue)
+                    && (hasRolledOver == otherCounter.hasRolledOver);
         }
         return result;
     }
@@ -110,8 +114,10 @@ public class Counter
      */
     public String toString()
     {
-        // CHANGE THE RETURN TO A DESCRIPTION OF THE COUNTER
-        return "";		
+        return "Counter: value=" + myValue
+                + " min=" + myMin
+                + " max=" + myMax
+                + " rolled over=" + hasRolledOver;
     }
  
 }
