@@ -111,9 +111,11 @@ public class Rational
      * @return a new rational number that is the sum of this object and the other rational.
      */    
     public Rational multiply(Rational other)
-    {       
-        // ADD NEW CODE AND CHANGE THE RETURN TO SOMETHING APPROPRIATE
-        return null;
+    {
+        int resultDenominator = denominator*other.denominator;
+        int resultNumerator = numerator*other.numerator ;
+
+        return new Rational(resultNumerator, resultDenominator);
     }
         
  
@@ -124,9 +126,8 @@ public class Rational
      * @return a new rational number that is r/t
      */    
     public Rational divide(Rational other)
-    {               
-        // CHANGE THE RETURN TO SOMETHING APPROPRIATE
-        return null;
+    {
+        return multiply(other.invert());
     }
      
  
