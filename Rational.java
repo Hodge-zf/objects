@@ -26,7 +26,12 @@ public class Rational
      */    
     public Rational(int n, int d)
     {
-        // ADD CODE TO THE ALTERNATE CONSTRUCTOR
+        numerator = n;
+        denominator = d;
+
+        if(denominator == 0)
+            throw new ZeroDenominatorException("Denominator can not be zero");
+        normalize();
     }
     
     /**
@@ -36,8 +41,7 @@ public class Rational
      */
     public int getNumerator()
     {
-        // CHANGE THE RETURN TO SOMETHING APPROPRIATE
-        return 0;
+        return numerator;
     }
     
     /**
@@ -47,8 +51,7 @@ public class Rational
      */
     public int getDenominator()
     {
-        // CHANGE THE RETURN TO SOMETHING APPROPRIATE
-        return 0;
+        return denominator;
     }
 
 
@@ -138,7 +141,13 @@ public class Rational
      */
     private void normalize()
     {
-        // ADD CODE TO NORMALIZE THE RATIONAL NUMBER
+        int absNumerator = Math.abs(numerator);
+        int absDenominator = Math.abs(denominator);
+        int signDenominator = denominator/absDenominator;
+
+        int divideBy = gcd(absNumerator, absDenominator);
+        numerator = (numerator / divideBy) * signDenominator;
+        denominator = (denominator / divideBy) * signDenominator;
     }
     
     /**
