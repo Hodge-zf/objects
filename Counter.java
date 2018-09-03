@@ -69,7 +69,16 @@ public class Counter
      */
     public void increase()
     {
-        // ADD CODE TO INCREASE THE VALUE OF THE COUNTER
+        myValue++;
+        if(myValue > myMax)
+        {
+            myValue = myMin;
+            hasRolledOver = true;
+        }
+        else
+        {
+            hasRolledOver = false;
+        }
     }
  
  
@@ -78,7 +87,16 @@ public class Counter
      */
     public void decrease()
     {
-        // ADD CODE TO INCREASE THE VALUE OF THE COUNTER
+        myValue--;
+        if(myValue < myMin)
+        {
+            myValue = myMax;
+            hasRolledOver = true;
+        }
+        else
+        {
+            hasRolledOver = false;
+        }
     }
     
     /**
@@ -88,8 +106,7 @@ public class Counter
      */
     public int value()
     {
-        // CHANGE THE RETURN TO GIVE THE CURRENT VALUE OF THE COUNTER
-        return -50;
+        return myValue;
 		
     }
     
@@ -102,8 +119,7 @@ public class Counter
      */
     public boolean rolledOver()
     {
-        // CHANGE THE RETURN TO THE ROLLOVER STATUS OF THE COUNTER
-        return true;
+        return hasRolledOver;
     }
     
     /**
